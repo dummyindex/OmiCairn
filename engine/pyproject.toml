@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omicairn"
+version = "1.0.0"
+description = "OmiCairn: an accountable self-learning multi-agent platform for hypothesis-driven biomedical multi-omics analysis"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "pyyaml>=6.0",
+    "rich>=13.0",
+    "requests>=2.31",
+]
+
+[project.scripts]
+omicairn = "omicairn.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["omicairn*"]

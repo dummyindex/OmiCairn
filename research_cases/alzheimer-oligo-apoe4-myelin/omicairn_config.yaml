@@ -1,0 +1,40 @@
+# omicairn_config.yaml — orchestration knobs for alzheimer-oligo-apoe4-myelin.
+# Lives alongside RESEARCH.md. Read by the orchestrator at workspace init.
+# RESEARCH.md keeps the semantic research brief (question, hypotheses,
+# figures_planned, success_criteria). This file owns the operational
+# config (budgets, bounds, retry semantics, claude model).
+
+budgets:
+  # Case-wide per-phase wall ceiling. Mirrors alzheimer-apoe4-microglia-ldam.
+  max_phase_wall_minutes: 240
+  # Total pipeline wall ceiling. Outer-loop break. Raised to >=360 to
+  # absorb CONTRACT_FAIL retry loops in EXECUTE/CROSS_CHECK.
+  max_total_wall_minutes: 360
+  # No per-phase overrides for this case — every phase inherits the
+  # case-wide max_phase_wall_minutes above.
+  # Claude API spend cap per phase.
+  max_phase_budget_usd: 25.0
+  # WebFetch + WebSearch are REQUIRED so EXECUTE can fetch GEO.
+  allow_web: true
+  # Claude model identifier.
+  claude_model: claude-sonnet-4-6
+
+bounds:
+  # Per-phase retry cap. Counts CONTRACT_FAIL retries from §3.1.
+  max_iters_per_phase: 5
+  # Bound on cross-phase back_to_plan / back_to_scope loops.
+  max_backtracks: 5
+
+# DISCOVERY mode: allow EXECUTE/REVIEW to register new hypotheses
+# beyond the two pre-registered seeds (this is an exploratory,
+# ideate-derived study).
+allow_on_the_fly_hypotheses: true
+max_on_the_fly_hypotheses: 6
+
+# Auto-proceed flag. Currently dormant; reserved for future
+# human-confirm gates.
+auto_approve: true
+
+# Shared dataset cache. Critical for AD snRNA-seq cases that reuse
+# expensive h5ads across runs.
+shared_cache: ./datasets

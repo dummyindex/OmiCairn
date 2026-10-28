@@ -1,0 +1,39 @@
+[
+  {
+    "name": "russo_2025_supp",
+    "url": "https://www.thelancet.com/journals/laneur/",
+    "role": "Russo 2025 Lancet Neurology CSF SAA Vmax/Tmax/AUC group means",
+    "target": "./datasets/russo_2025_supp/",
+    "note": "Exact DOI to be confirmed during READ; provisional 10.1016/S1474-4422(25)00094-2."
+  },
+  {
+    "name": "bayati_2024_supp",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10927779/",
+    "role": "Bayati 2024 Acta Neuropathologica Olink + CSF + plasma + urine protein medians",
+    "target": "./datasets/bayati_2024_supp/"
+  },
+  {
+    "name": "hallqvist_2024_supp",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11189460/",
+    "role": "H\u00e4llqvist 2024 Nat Commun 8-protein plasma panel by visit (supp tables only)",
+    "target": "./datasets/hallqvist_2024_supp/"
+  },
+  {
+    "name": "burciu_2023_supp",
+    "url": "https://www.frontiersin.org/journals/neurology",
+    "role": "Burciu 2023 Frontiers Neurology per-visit free-water dMRI group means",
+    "target": "./datasets/burciu_2023_supp/"
+  },
+  {
+    "name": "simuni_2024_supp",
+    "url": "https://movementdisorders.onlinelibrary.wiley.com/journal/15318257",
+    "role": "Simuni 2024 Movement Disorders LRRK2-G2019S SAA-stratified group-mean curves",
+    "target": "./datasets/simuni_2024_supp/"
+  },
+  {
+    "name": "marek_2018_supp",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1002/acn3.644",
+    "role": "Marek 2018 + downstream PPMI baseline + longitudinal MDS-UPDRS-III group means",
+    "target": "./datasets/marek_2018_supp/"
+  }
+]

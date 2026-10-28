@@ -1,0 +1,21 @@
+# omicairn_config.yaml — orchestration knobs for parkinson-multimodal-ppmi-trajectory.
+# Lives alongside RESEARCH.md. Read by the orchestrator at workspace init.
+# RESEARCH.md keeps the semantic research brief; this file owns the
+# operational config (budgets, bounds, retry semantics, claude model).
+
+budgets:
+  max_phase_wall_minutes: 240
+  max_total_wall_minutes: 1440
+  max_phase_wall_minutes_by_phase:
+    execute: 240
+  max_phase_budget_usd: 25.0
+  allow_web: true
+  claude_model: claude-sonnet-4-6
+
+bounds:
+  max_iters_per_phase: 5
+  max_backtracks: 5
+
+auto_approve: true
+
+shared_cache: ./datasets

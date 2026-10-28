@@ -1,0 +1,49 @@
+# omicairn_config.yaml — orchestration knobs for neurodeg-microglia-convergence.
+# Lives alongside RESEARCH.md; values here OVERRIDE matching RESEARCH.md
+# fields at workspace-init. CONFIRMATORY cross-disease microglial case;
+# full-data, CPU-only (pseudobulk DE + compositional models + AUCell/regulon).
+
+budgets:
+  # Case-wide per-phase wall ceiling, minutes (phases not stratified below).
+  max_phase_wall_minutes: 300
+
+  # Total pipeline wall ceiling, minutes. Sized for FULL-DATA multi-atlas
+  # integration + CONTRACT_FAIL retries (comprehensive snRNA-seq: 600 = 10h).
+  max_total_wall_minutes: 600
+
+  # Stratified per-phase wall budgets (no RESEARCH.md counterpart). EXECUTE
+  # raised for full-data multi-atlas microglial integration on CPU so the
+  # agent is never tempted to subsample to fit the clock.
+  max_phase_wall_minutes_by_phase:
+    execute: 420       # 7h for full-data 3-disease integration + orthogonal methods
+    review: 60
+
+  # Claude API spend cap per phase, USD.
+  max_phase_budget_usd: 25.0
+
+  # WebFetch + WebSearch in the per-phase allowlist. REQUIRED for fetches.
+  allow_web: true
+
+  # claude-sonnet-4-6 for cheap dev/smoke; switch to opus for production.
+  claude_model: claude-sonnet-4-6
+
+bounds:
+  max_iters_per_phase: 5
+  max_backtracks: 5
+
+# CONFIRMATORY case: seeds are pre-registered and decisive. Allow a small
+# number of on-the-fly hypotheses so EXECUTE/REVIEW can register the
+# myelin-microglia / MSR1 shared-program angle the GSE303823 paper raises
+# without it being a contract failure — but the 6 seeds drive the run.
+allow_on_the_fly_hypotheses: true
+max_on_the_fly_hypotheses: 4
+
+# OPTIONAL IDEATE source-credibility bias (belief 13). Off — a bias, not an
+# assumption. Left default for transparency.
+# prefer_reputable_sources: false
+
+# Auto-proceed flag. Dormant; kept for contract compatibility.
+auto_approve: true
+
+# Shared dataset cache — reused expensive snRNA-seq atlases across runs.
+shared_cache: ./datasets

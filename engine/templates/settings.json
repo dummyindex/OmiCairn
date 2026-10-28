@@ -1,0 +1,30 @@
+{
+  "env": {
+    "OMICAIRN_WORKSPACE": ".",
+    "OMICAIRN_DATA_DIR": "{{data_location}}"
+  },
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Write(**)",
+      "Edit(**)",
+      "Glob(**)",
+      "Grep(**)",
+      "Bash",
+      "WebFetch",
+      "WebSearch",
+      "TodoWrite",
+      "Task"
+    ],
+    "deny": [
+      "Write(RESEARCH.md)",
+      "Write(CLAUDE.md)",
+      "Write(STATE.md)",
+      "Edit(RESEARCH.md)",
+      "Edit(CLAUDE.md)",
+      "Edit(STATE.md)",
+      "Bash(rm -rf:*)",
+      "Bash(curl:*|sh:*)"
+    ]
+  }
+}

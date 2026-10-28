@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+.venv-*/
+venv/
+*.conda/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Credentials — never commit
+.env
+.env.*
+!.env.example
+*.key
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OmiCairn run workspaces (large, per-run outputs)
+workspaces/
+
+# Shared dataset cache
+datasets/
+
+# Claude Code local runtime state
+.claude/
+.mcp.json
+
+# Large binary / tabular data
+*.h5
+*.hdf5
+*.h5ad
+*.parquet
+*.feather
+*.pkl
+*.pickle
+*.rds
+*.RData
+
+# Real-cohort data in research cases is not committed — regenerate with
+# research_cases/<slug>/fetch_data.py. The synthetic smoke-test data IS
+# committed so the smoke test runs out of the box.
+research_cases/*/data/*.csv
+research_cases/*/data/*.tsv
+!research_cases/smoke-tiny/data/*.csv

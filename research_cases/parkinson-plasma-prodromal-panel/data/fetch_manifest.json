@@ -1,0 +1,30 @@
+[
+  {
+    "name": "PXD046355_hallqvist",
+    "url": "https://www.ebi.ac.uk/pride/archive/projects/PXD046355",
+    "role": "Primary spectra (H\u00e4llqvist 2024 LC-MS/MS DIA plasma)",
+    "content": "~250 DIA runs; 99 PD + 36 HC + 72 iRBD (18 conv / 54 non-conv) + 41 disease ctrl",
+    "target": "./datasets/PXD046355_hallqvist/"
+  },
+  {
+    "name": "gan_2025_UKB_supp",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39979637/",
+    "role": "Cross-platform direction-concordance reference (Gan/You 2025 UKB Olink)",
+    "content": "Supplementary tables: per-protein incident-PD HR + p in UKB Olink Explore 1536",
+    "target": "./datasets/gan_2025_UKB_supp/"
+  },
+  {
+    "name": "bayati_2024_supp",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10927779/",
+    "role": "DDC sanity-check (Bayati 2024)",
+    "content": "Supplementary tables: DDC PD-vs-HC effect-size across 7 cohorts \u00d7 3 platforms",
+    "target": "./datasets/bayati_2024_supp/"
+  },
+  {
+    "name": "uniprot_human_canonical",
+    "url": "https://www.uniprot.org/proteomes/UP000005640",
+    "role": "DIA-NN spectral library generation",
+    "content": "SwissProt human canonical proteome FASTA",
+    "target": "./datasets/uniprot_human_canonical/"
+  }
+]

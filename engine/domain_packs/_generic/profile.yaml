@@ -1,0 +1,19 @@
+# Generic fallback domain pack.
+# Selected automatically when RESEARCH.md declares a domain that no
+# specific pack matches, or when `domain` is empty.
+name: _generic
+description: Neutral, domain-agnostic guidance for any research project.
+matches:
+  - generic
+  - "*"
+
+# Opt-in W-check enforcement. W2/W5 encode biomedical-style
+# conventions (pre-hoc power analysis, literal H1-decision annotation
+# on the primary panel). These are false-positive magnets for
+# non-biomedical domains — CS/ML benchmarks don't do pre-hoc power,
+# math/theory work has no CIs, exploratory or descriptive work has no
+# H1 — so the generic pack opts out by default. Domain packs that want these patches enable them
+# explicitly (see domain_packs/survival_prognostic/profile.yaml).
+# W7/W8 are always-on (silent-skip when triggers absent) and do not
+# appear in these lists.
+enforce_execute_checks:

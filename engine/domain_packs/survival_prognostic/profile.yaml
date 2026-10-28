@@ -1,0 +1,50 @@
+name: survival_prognostic
+description: Prognostic / survival modeling (Cox, LASSO-Cox, c-index, KM).
+matches:
+  - survival
+  - prognostic
+  - oncology
+  - biomarker
+  - cox
+  - kaplan-meier
+
+# Extra baseline-name substrings used by cross_check.baseline_name_hints()
+# to classify condition names in a legacy results.json as baselines
+# rather than the primary model. These are appended to the generic
+# defaults (null, random, baseline, adversarial, …).
+baseline_name_hints:
+  - grade_only
+  - stage_only
+  - age_only
+  - tnm
+  - clinical_only
+
+# Substrings used by cross_check.ci_skip_patterns() to suppress
+# exploratory per-feature CI walks that are summarised in analysis.md
+# rather than listed verbatim. Appended to the generic defaults
+# (univariate, h2).
+ci_skip_paths:
+  - multivariate_cox.variables
+  - stratum_trained
+
+# Extra metric names recognised by cross_check._check_bounded_metric_ranges
+# for survival / prognostic work. Appended to the generic defaults
+# (Harrell c-index and its aliases are already generic).
+metric_bounds_0_1:
+  - ibs
+  - integrated_brier
+  - time_dependent_auc
+  - td_auc
+metric_bounds_nonneg:
+  - partial_likelihood
+  - neg_log_partial_likelihood
+  - nll_partial
+  - hr_se
+
+# Opt-in W-check enforcement. The execute-stage structural checks
+# (W2/W5) map cleanly onto clinical / prognostic work, so
+# survival_prognostic enables both. W7/W8 are always-on (silent-skip
+# otherwise) and therefore do not appear here.
+enforce_execute_checks:
+  - w2
+  - w5

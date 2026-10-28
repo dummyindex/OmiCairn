@@ -1,0 +1,45 @@
+[
+  {
+    "name": "geneformer_95m",
+    "url": "https://huggingface.co/ctheodoris/Geneformer",
+    "role": "Geneformer 95M-cell weights (V2; primary foundation model)",
+    "target": "./datasets/geneformer_95m/",
+    "note": "Use ctheodoris/Geneformer-V2-95M variant; fp16 inference + chunked batches."
+  },
+  {
+    "name": "scgpt_human",
+    "url": "https://github.com/bowang-lab/scGPT",
+    "role": "scGPT human-pan weights (second foundation model)",
+    "target": "./datasets/scgpt_human/"
+  },
+  {
+    "name": "cellxgene_d5d0df8f_fullard",
+    "url": "https://cellxgene.cziscience.com/collections/d5d0df8f-4eee-49d8-a221-a288f50a1590",
+    "role": "Primary embedding source (Fullard 2024 SNpc slab)",
+    "target": "./datasets/cellxgene_d5d0df8f_fullard/"
+  },
+  {
+    "name": "GSE178265",
+    "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE178265",
+    "role": "Fine-tune label source (Kamath 2022 SNpc)",
+    "target": "./datasets/GSE178265/"
+  },
+  {
+    "name": "GSE184950",
+    "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE184950",
+    "role": "Held-out transfer atlas (Wang 2024 SNpc)",
+    "target": "./datasets/GSE184950/"
+  },
+  {
+    "name": "GSE193688",
+    "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE193688",
+    "role": "Held-out transfer atlas (Adams 2024 SN; RNA arm)",
+    "target": "./datasets/GSE193688/"
+  },
+  {
+    "name": "scEval_benchmark",
+    "url": "https://github.com/raphael-group/scEval",
+    "role": "log-CPM-PCA-LR baseline harness (Boiarsky 2024) for matched comparison",
+    "target": "./datasets/scEval_benchmark/"
+  }
+]

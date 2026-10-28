@@ -1,0 +1,40 @@
+[
+  {
+    "name": "GCST90275127_kim",
+    "url": "https://www.ebi.ac.uk/gwas/studies/GCST90275127",
+    "role": "Kim 2024 multi-ancestry PD GWAS sumstats (primary)",
+    "target": "./datasets/GCST90275127_kim/"
+  },
+  {
+    "name": "GCST009325_nalls",
+    "url": "https://www.ebi.ac.uk/gwas/studies/GCST009325",
+    "role": "Nalls 2019 EUR-only PD GWAS sumstats (H4 head-to-head)",
+    "target": "./datasets/GCST009325_nalls/"
+  },
+  {
+    "name": "1000_genomes_phase3_v5",
+    "url": "https://www.internationalgenome.org/data-portal/data-collection/phase-3",
+    "role": "Individual-genotype substrate (2,504 individuals across 26 sub-populations)",
+    "target": "./datasets/1000_genomes_phase3_v5/",
+    "note": "VCF \u2192 Plink2 binary; QC: MAF>0.01, HWE>1e-6, missingness<0.02."
+  },
+  {
+    "name": "ldpred_funct",
+    "url": "https://github.com/carlaml/LDpred-funct",
+    "role": "LDpred-funct PRS construction tool + LD reference matrices",
+    "target": "./datasets/ldpred_funct/"
+  },
+  {
+    "name": "storm_2025_pqtl",
+    "url": "https://academic.oup.com/brain/article-abstract/148/8/2412/",
+    "role": "Storm 2025 pQTL-instrumented PD-target list (H3 proteinMR overlay)",
+    "target": "./datasets/storm_2025_pqtl/"
+  },
+  {
+    "name": "saffie_awad_2025_supp",
+    "url": "https://www.nature.com/articles/s41531-025-",
+    "role": "Saffie-Awad 2025 per-ancestry AUC benchmarks (Supp Table 3)",
+    "target": "./datasets/saffie_awad_2025_supp/",
+    "note": "Exact DOI / npj Parkinson's volume to be confirmed during READ; provisional."
+  }
+]

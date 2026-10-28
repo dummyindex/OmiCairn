@@ -1,0 +1,69 @@
+# scRNA-seq / single-cell domain pack
+# Matches RESEARCH.md.domain values containing "scrna", "scrnaseq",
+# "single_cell", "single-cell", "scrnaseq" or developmental
+# neuroscience scRNA-seq projects.
+#
+# Seeded from the morphogen-organoid-screen-20260423-044406 workspace's
+# experiment_plan.md and method-parity checklist plus published methods
+# conventions for atlases (Braun 2023, HNOCA He 2024).
+name: scrna_seq
+description: Single-cell RNA-seq workflows (10x, Parse, MARS-seq, etc.) including atlas integration, regulon inference, and reproducibility benchmarking.
+matches:
+  - scrna
+  - scrnaseq
+  - scrna_seq
+  - scrna-seq
+  - single_cell
+  - single-cell
+  - developmental_neuroscience_scrnaseq
+
+# Opt-in W-checks. scRNA-seq analyses follow the biomedical
+# conventions of pre-hoc power and an annotated primary panel, so we
+# enable w2/w5. W7 (stratum-trained sensitivity), W8 (viz-data
+# separation), W9 (DAG) and W10 (family correction) are enabled by
+# default elsewhere.
+enforce_execute_checks:
+  - w2
+  - w5
+
+# Adversarial baselines specific to scRNA-seq enrichment / regulon
+# / classification work. Merged on top of the generic defaults.
+baseline_name_hints:
+  - shuffled_cluster_labels
+  - random_regulon_set
+  - permuted_condition_labels
+  - permuted_donor_labels
+  - permuted_batch_labels
+  - perm_source_labels
+
+# Metric ranges admitted as valid. KLD and MMD are non-negative;
+# AUCell scores live in [0,1]; Spearman / Pearson live in [-1,1].
+metric_bounds_0_1:
+  - aucell_score
+  - presence_score
+  - cluster_proportion
+  - cluster_purity
+  - silhouette_norm
+metric_bounds_neg1_1:
+  - spearman_rho
+  - pearson_r
+  - log2_or
+metric_bounds_nonneg:
+  - kld
+  - kl_divergence
+  - mmd
+  - e_distance
+  - mae_pp
+  - silhouette_score
+
+# Dotted paths the CI walker can skip (spurious flags from large
+# per-cell matrices that legitimately have NaN entries).
+ci_skip_paths:
+  - per_cell_aucell_matrix
+  - obsm.X_pca
+  - obsm.X_umap
+  - obsm.X_harmony
+  - obsm.X_scvi
+  - obsm.X_scanvi
+  - obsm.X_css
+  - obsm.X_rss
