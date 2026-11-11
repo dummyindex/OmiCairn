@@ -1,0 +1,21 @@
+# Orchestration config for the PD-mechanism IDEATE survey. Targets tuned
+# UP vs the smoke ideate cases: this is a real literature survey.
+budgets:
+  max_phase_wall_minutes: 90      # ~50-paper survey takes time
+  max_total_wall_minutes: 180
+  allow_web: true                 # IDEATE needs WebSearch/WebFetch
+  claude_model: claude-sonnet-4-6 # ideation = read+synthesize; sonnet, separate quota from opus
+  max_phase_budget_usd: 6.0
+bounds:
+  max_iters_per_phase: 3
+  max_backtracks: 3
+allow_on_the_fly_hypotheses: true
+max_on_the_fly_hypotheses: 6
+# ~50-paper target (per user request), reached by accumulating across
+# IDEATE re-runs (source nodes dedup; the graph is additive).
+ideate:
+  target_papers: 50
+  target_blogs: 8
+  target_beliefs: 12
+  min_directions: 5
+  max_directions: 8

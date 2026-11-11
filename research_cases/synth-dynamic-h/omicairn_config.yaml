@@ -1,0 +1,16 @@
+# Orchestration config for the DYNAMIC-HYPOTHESES arm.
+# Identical to synth-singleh-control EXCEPT allow_on_the_fly_hypotheses
+# (+ its cap), so the A/B isolates the dynamic-hypothesis mechanism.
+budgets:
+  max_phase_wall_minutes: 10
+  max_total_wall_minutes: 120
+  allow_web: false
+  claude_model: claude-sonnet-4-6
+  max_phase_budget_usd: 2.0
+bounds:
+  max_iters_per_phase: 3
+  max_backtracks: 3
+# The lever under test: ON here, OFF in synth-singleh-control.
+allow_on_the_fly_hypotheses: true
+max_on_the_fly_hypotheses: 5
+auto_approve: true

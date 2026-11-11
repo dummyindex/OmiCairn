@@ -1,0 +1,50 @@
+# omicairn_config.yaml — orchestration knobs for pd-vatpase-lysosomal-compensation.
+# Lives alongside RESEARCH.md; values here OVERRIDE matching RESEARCH.md
+# fields at workspace-init. CONFIRMATORY self-replication case; full-data,
+# CPU-only (NanoString DE + bulk + single-cell pseudobulk + module scoring).
+
+budgets:
+  # Case-wide per-phase wall ceiling, minutes (phases not stratified below).
+  max_phase_wall_minutes: 240
+
+  # Total pipeline wall ceiling, minutes. Sized for 3-cohort cross-modality
+  # replication + CONTRACT_FAIL retries (480 = 8h). Lighter than the
+  # cross-disease atlas case: cohorts are smaller (NanoString + iPSC + 11
+  # postmortem donors) but still full-data.
+  max_total_wall_minutes: 480
+
+  # Stratified per-phase wall budgets (no RESEARCH.md counterpart). EXECUTE
+  # raised for full-data cross-modality work (single-cell pseudobulk of the
+  # E-MTAB-7303 + GSE157783 arms) so the agent never subsamples to fit.
+  max_phase_wall_minutes_by_phase:
+    execute: 300       # 5h for full-data 3-cohort cross-modality replication
+    review: 60
+
+  # Claude API spend cap per phase, USD.
+  max_phase_budget_usd: 25.0
+
+  # WebFetch + WebSearch in the per-phase allowlist. REQUIRED for fetches.
+  allow_web: true
+
+  # claude-sonnet-4-6 for cheap dev/smoke; switch to opus for production.
+  claude_model: claude-sonnet-4-6
+
+bounds:
+  max_iters_per_phase: 5
+  max_backtracks: 5
+
+# CONFIRMATORY self-replication: the 5 seeds are decisive and pre-registered.
+# Allow a few on-the-fly hypotheses so REVIEW can register e.g. a
+# TFEB-target / autophagy-gene corroboration without contract failure.
+allow_on_the_fly_hypotheses: true
+max_on_the_fly_hypotheses: 3
+
+# OPTIONAL IDEATE source-credibility bias (belief 13). Off — a bias, not an
+# assumption. Left default for transparency.
+# prefer_reputable_sources: false
+
+# Auto-proceed flag. Dormant; kept for contract compatibility.
+auto_approve: true
+
+# Shared dataset cache — reused across runs.
+shared_cache: ./datasets

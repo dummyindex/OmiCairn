@@ -1,0 +1,81 @@
+cff-version: 1.2.0
+message: "If you use OmiCairn, please cite the accompanying manuscript."
+title: "OmiCairn"
+type: software
+version: 1.0.0
+date-released: 2026-10-17
+license: MIT
+repository-code: "https://github.com/dummyindex/OmiCairn"
+abstract: >-
+  An accountable, self-learning multi-agent platform that converts open-ended
+  biomedical questions into executable, dependency-aware, evidence-linked and
+  auditable multi-omics analyses.
+keywords:
+  - multi-agent systems
+  - multi-omics
+  - retrieval-augmented generation
+  - evidence-grounded reasoning
+  - reproducibility
+authors:
+  - family-names: Su
+    given-names: Huidong
+  - family-names: Chen
+    given-names: Yuhao
+  - family-names: Gao
+    given-names: Yexiu
+  - family-names: Yuan
+    given-names: Jixing
+  - family-names: Yu
+    given-names: Ze
+  - family-names: Chen
+    given-names: Yanshuo
+  - family-names: Cui
+    given-names: Xuehao
+  - family-names: Yin
+    given-names: Danqing
+  - family-names: Zhang
+    given-names: Jing
+  - family-names: Yu
+    given-names: Yu
+  - family-names: Wu
+    given-names: Yuefei
+  - family-names: Chen
+    given-names: Ming
+  - family-names: Gui
+    given-names: Zeping
+  - family-names: Ni
+    given-names: Ke
+preferred-citation:
+  type: article
+  title: "OmiCairn: an accountable self-learning platform for hypothesis-driven biomedical multi-omics analysis"
+  year: 2026
+  notes: "Manuscript in preparation."
+  authors:
+    - family-names: Su
+      given-names: Huidong
+    - family-names: Chen
+      given-names: Yuhao
+    - family-names: Gao
+      given-names: Yexiu
+    - family-names: Yuan
+      given-names: Jixing
+    - family-names: Yu
+      given-names: Ze
+    - family-names: Chen
+      given-names: Yanshuo
+    - family-names: Cui
+      given-names: Xuehao
+    - family-names: Yin
+      given-names: Danqing
+    - family-names: Zhang
+      given-names: Jing
+    - family-names: Yu
+      given-names: Yu
+    - family-names: Wu
+      given-names: Yuefei
+    - family-names: Chen
+      given-names: Ming
+    - family-names: Gui
+      given-names: Zeping
+    - family-names: Ni
+      given-names: Ke

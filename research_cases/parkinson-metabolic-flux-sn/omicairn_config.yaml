@@ -1,0 +1,40 @@
+# omicairn_config.yaml — orchestration knobs for parkinson-metabolic-flux-sn.
+# Lives alongside RESEARCH.md. Read by the orchestrator at workspace init.
+# RESEARCH.md keeps the semantic research brief (question, hypotheses,
+# figures_planned, success_criteria). This file owns the operational
+# config (budgets, bounds, retry semantics, claude model).
+
+budgets:
+  # Case-wide per-phase wall ceiling. Used when no phase-specific
+  # override applies. parkinson 15-case suite (May 2026) used 240 min
+  # everywhere; we keep that here as a sane default.
+  max_phase_wall_minutes: 240
+  # Total pipeline wall ceiling. Outer-loop break.
+  max_total_wall_minutes: 1440
+  # Stratified per-phase budgets. A phase listed here overrides
+  # max_phase_wall_minutes for that phase only. Phases not listed
+  # inherit the case-wide value.
+  # No per-phase overrides for this case — every phase
+  # inherits the case-wide max_phase_wall_minutes above.
+  # (For stratified examples see parkinson-asyn-propagation
+  # or parkinson-foundation-embedding.)
+  # Claude API spend cap per phase.
+  max_phase_budget_usd: 25.0
+  # Whether WebFetch + WebSearch are in the per-phase allowlist.
+  allow_web: true
+  # Claude model identifier.
+  claude_model: claude-sonnet-4-6
+
+bounds:
+  # Per-phase retry cap. Counts CONTRACT_FAIL retries from §3.1.
+  max_iters_per_phase: 5
+  # Bound on cross-phase back_to_plan / back_to_scope loops.
+  max_backtracks: 5
+
+# Auto-proceed flag. Currently dormant; reserved for future
+# human-confirm gates.
+auto_approve: true
+
+# Shared dataset cache. The shared cache is critical for parkinson
+# cases because they reuse expensive snRNA-seq h5ads across runs.
+shared_cache: ./datasets

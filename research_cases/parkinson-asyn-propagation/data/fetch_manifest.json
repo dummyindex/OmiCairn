@@ -1,0 +1,28 @@
+[
+  {
+    "name": "cellxgene_d5d0df8f_fullard",
+    "url": "https://cellxgene.cziscience.com/collections/d5d0df8f-4eee-49d8-a221-a288f50a1590",
+    "role": "5-region snRNA-seq atlas for per-region SNCA + cell-type fractions (Fullard 2024)",
+    "target": "./datasets/cellxgene_d5d0df8f_fullard/",
+    "note": "Use all 5 regions: DMNX, SNpc, GPi (or cingulate), M1, V1."
+  },
+  {
+    "name": "allen_human_connectivity",
+    "url": "https://human.brain-map.org/",
+    "role": "Allen Human Brain Connectivity Atlas projection strengths (connectome matrix)",
+    "target": "./datasets/allen_human_connectivity/",
+    "note": "Fetch via allensdk Python client; row-normalise + log-transform projection strengths."
+  },
+  {
+    "name": "goralski_lamda",
+    "url": "https://zenodo.org/records/10729767",
+    "role": "Cingulate spatial Lewy-burden profile for H3 cell-type prediction (Goralski 2024)",
+    "target": "./datasets/goralski_lamda/"
+  },
+  {
+    "name": "henderson_2019_mouse",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6372945/",
+    "role": "Henderson 2019 mouse-atlas SIR-connectome parameter prior (H5 prior initialisation)",
+    "target": "./datasets/henderson_2019_mouse/"
+  }
+]

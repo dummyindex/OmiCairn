@@ -1,0 +1,151 @@
+{
+  "study_discovery": "luad_tcga_pan_can_atlas_2018",
+  "discovery_profile": "luad_tcga_pan_can_atlas_2018_rna_seq_v2_mrna_median_Zscores",
+  "gene_panel": [
+    "SCAF11",
+    "NOD1",
+    "NLRP2",
+    "NLRP1",
+    "GPX4",
+    "CASP8",
+    "AIM2",
+    "GSDMD",
+    "GSDME",
+    "CASP1",
+    "CASP3",
+    "CASP4",
+    "IL1B",
+    "IL18",
+    "NLRP3",
+    "PYCARD"
+  ],
+  "entrez_ids": {
+    "SCAF11": 9169,
+    "NOD1": 10392,
+    "NLRP2": 55655,
+    "NLRP1": 22861,
+    "GPX4": 2879,
+    "CASP8": 841,
+    "AIM2": 9447,
+    "GSDMD": 79792,
+    "GSDME": 1687,
+    "CASP1": 834,
+    "CASP3": 836,
+    "CASP4": 837,
+    "IL1B": 3553,
+    "IL18": 3606,
+    "NLRP3": 114548,
+    "PYCARD": 29108
+  },
+  "genes_resolved": 16,
+  "genes_requested": 16,
+  "n_discovery_samples_expr": 510,
+  "n_discovery_samples_clin": 566,
+  "discovery_genes_available": [
+    "SCAF11",
+    "NOD1",
+    "NLRP2",
+    "NLRP1",
+    "GPX4",
+    "CASP8",
+    "AIM2",
+    "GSDMD",
+    "GSDME",
+    "CASP1",
+    "CASP3",
+    "CASP4",
+    "IL1B",
+    "IL18",
+    "NLRP3",
+    "PYCARD"
+  ],
+  "discovery_survival_columns": {
+    "OS_STATUS": true,
+    "OS_MONTHS": true,
+    "DFS_STATUS": true,
+    "DFS_MONTHS": true,
+    "PFS_STATUS": true,
+    "PFS_MONTHS": true
+  },
+  "validation_cohorts": [
+    {
+      "study_id": "luad_oncosg_2020",
+      "profile_id": "luad_oncosg_2020_rna_seq_v2_mrna_median_Zscores",
+      "sample_list_id": "luad_oncosg_2020_all",
+      "n_samples_expr": 169,
+      "n_samples_clin": 305,
+      "genes_available": [
+        "SCAF11",
+        "NOD1",
+        "NLRP2",
+        "NLRP1",
+        "GPX4",
+        "CASP8",
+        "AIM2",
+        "GSDMD",
+        "GSDME",
+        "CASP1",
+        "CASP3",
+        "CASP4",
+        "IL1B",
+        "IL18",
+        "NLRP3",
+        "PYCARD"
+      ],
+      "has_os_data": true,
+      "survival_columns": {
+        "OS_STATUS": true,
+        "OS_MONTHS": true,
+        "DFS_STATUS": false,
+        "DFS_MONTHS": false,
+        "PFS_STATUS": false,
+        "PFS_MONTHS": false
+      }
+    },
+    {
+      "study_id": "luad_cas_2020",
+      "profile_id": "luad_cas_2020_mrna_seq_fpkm_all_sample_Zscores",
+      "sample_list_id": "luad_cas_2020_all",
+      "n_samples_expr": 51,
+      "n_samples_clin": 103,
+      "genes_available": [
+        "NLRP2",
+        "NLRP1",
+        "GPX4",
+        "CASP8",
+        "GSDME",
+        "CASP1",
+        "CASP3",
+        "CASP4",
+        "IL1B",
+        "IL18",
+        "NLRP3",
+        "PYCARD"
+      ],
+      "has_os_data": true,
+      "survival_columns": {
+        "OS_STATUS": true,
+        "OS_MONTHS": true,
+        "DFS_STATUS": true,
+        "DFS_MONTHS": true,
+        "PFS_STATUS": false,
+        "PFS_MONTHS": false
+      }
+    }
+  ],
+  "split_fallback_used": false,
+  "random_seed": null,
+  "cohort_names": [
+    "tcga_luad_discovery",
+    "luad_oncosg_2020",
+    "luad_cas_2020"
+  ],
+  "files": {
+    "tcga_luad_expression": "tcga_luad_expression_zscores.csv",
+    "tcga_luad_clinical": "tcga_luad_clinical.csv",
+    "luad_oncosg_2020_expression": "luad_oncosg_2020_expression_zscores.csv",
+    "luad_oncosg_2020_clinical": "luad_oncosg_2020_clinical.csv",
+    "luad_cas_2020_expression": "luad_cas_2020_expression_zscores.csv",
+    "luad_cas_2020_clinical": "luad_cas_2020_clinical.csv"
+  }
+}

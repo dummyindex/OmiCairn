@@ -1,0 +1,16 @@
+name = "LeanScaffold"
+version = "0.1.0"
+defaultTargets = ["LeanScaffold"]
+
+# Mathlib-FREE on purpose: a OmiCairn run's math claims should prefer Lean 4
+# CORE tactics (rfl, decide, omega, simp + core Nat/Int lemmas) so proofs
+# check in well under a second with NO Mathlib build. NOTE: `ring`,
+# `linarith`, and `norm_num` are NOT core — they require `import Mathlib`
+# and fail with `error: unknown tactic` in this scaffold (confirmed, Lean
+# v4.30.0). If a run genuinely needs Mathlib, the owner adds the dependency
+# + runs `lake exe cache get` ONCE locally (see rules/method_depth.md M6).
+# This scaffold gives the math-formalization skill a real Lake project
+# context and gives the test suite a real project to build a `.lean` in.
+
+[[lean_lib]]
+name = "LeanScaffold"
